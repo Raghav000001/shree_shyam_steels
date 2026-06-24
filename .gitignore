@@ -45,3 +45,13 @@ REQUIREMENTS.txt
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI agent runtime
+.opencode/
+.sisyphus/
+.playwright-mcp/
+**/AGENTS.md
+
+# python cache
+__pycache__/
+*.pyc

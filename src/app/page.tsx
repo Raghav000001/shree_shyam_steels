@@ -11,7 +11,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <QuoteBannerSection />
-      <ExhibitionsSection />
+      {/* <ExhibitionsSection /> */}
     </main>
   );
 }

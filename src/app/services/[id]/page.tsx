@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title: service.title,
     description: service.shortDesc,
     openGraph: {
-      title: `${service.title} | Aeron Steels`,
+      title: `${service.title} | Shree Shyam Precision`,
       description: service.shortDesc,
     },
   };

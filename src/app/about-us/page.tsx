@@ -4,11 +4,11 @@ import AboutUsClient from './AboutUsClient';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Aeron Steels Private Limited (ASPL) — 10+ years of steel manufacturing excellence in Rohtak, Haryana. ISO 9001:2015 certified, custom fabrication, precision component manufacturing.',
+    'Learn about Shree Shyam Precision — precision CNC turned components and quality machining in Rohtak, Haryana. ISO 9001:2015 certified, precision component manufacturing.',
   openGraph: {
-    title: 'About Us | Aeron Steels',
+    title: 'About Us | Shree Shyam Precision',
     description:
-      'ASPL — steel manufacturing, custom fabrication, and quality assurance since 2015.',
+      'Shree Shyam Precision — precision CNC turned components, quality machining, and manufacturing excellence.',
   },
 };
 

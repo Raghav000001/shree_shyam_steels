@@ -115,7 +115,7 @@ export default function InfrastructureClient() {
             </motion.button>
             <motion.img
               src={selectedImage}
-              alt="Aeron Steels facility"
+              alt="Shree Shyam Precision facility"
               className="max-w-full max-h-full object-contain drop-shadow-2xl"
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

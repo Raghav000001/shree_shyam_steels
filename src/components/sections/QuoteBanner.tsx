@@ -27,7 +27,7 @@ export default function QuoteBannerSection() {
           viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Get a <span className="text-[#FF5B22]">Quote</span>
+          Turning Ideas into <span className="text-[#FF5B22]">Precision Components</span>
         </motion.h2>
         
         <motion.div 
@@ -45,7 +45,7 @@ export default function QuoteBannerSection() {
           viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Share your requirements and get a customized quote tailored to your specifications.
+          From concept to finished product, we transform your designs into high-precision CNC machined components. With advanced manufacturing capabilities and strict quality standards, we deliver components that meet your exact requirements.
         </motion.p>
 
         <motion.button 

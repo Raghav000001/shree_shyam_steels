@@ -20,11 +20,11 @@ function optionalEnv(name: string, defaultValue: string): string {
 }
 
 export const ENV = {
-  SMTP_HOST: requireEnv('SMTP_HOST'),
-  SMTP_PORT: parseInt(requireEnv('SMTP_PORT'), 10),
-  SMTP_USER: requireEnv('SMTP_USER'),
-  SMTP_PASS: requireEnv('SMTP_PASS'),
-  CONTACT_EMAIL: optionalEnv('CONTACT_EMAIL', 'aeronsteels28@gmail.com'),
+  SMTP_HOST: optionalEnv('SMTP_HOST', 'smtp.gmail.com'),
+  SMTP_PORT: parseInt(optionalEnv('SMTP_PORT', '587'), 10),
+  SMTP_USER: optionalEnv('SMTP_USER', ''),
+  SMTP_PASS: optionalEnv('SMTP_PASS', ''),
+  CONTACT_EMAIL: optionalEnv('CONTACT_EMAIL', 'md@shreeshyamprecision'),
 
   MONGODB_URI: requireEnv('MONGODB_URI'),
 
@@ -34,5 +34,5 @@ export const ENV = {
 
   ADMIN_API_KEY: optionalEnv('ADMIN_API_KEY', ''),
 
-  SITE_URL: optionalEnv('SITE_URL', 'https://aeron-steels-final.vercel.app'),
+  SITE_URL: optionalEnv('SITE_URL', 'https://shreeshyamprecision.com'),
 } as const;

@@ -24,7 +24,7 @@ export async function uploadImage(
 
   return new Promise((resolve, reject) => {
     const uploadStream = cloudinary.uploader.upload_stream(
-      { folder: 'aeron_steels/products' },
+      { folder: 'shree_shyam_precision/products' },
       (error, result) => {
         if (error) {
           reject(error);

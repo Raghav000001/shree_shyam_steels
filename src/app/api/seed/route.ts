@@ -7,52 +7,9 @@ import path from 'path';
 
 const IMAGE_MAP: Record<string, string[]> = {
   'service_material_1778761584582.png': [
-    'HR/HRPO & CR CTL Sheets',
-    'Galvanized Steel Coils',
-    'Carbon Steel Plates HR',
-  ],
-  'service_power_1778761289382.png': [
-    'Eicher Jumbo Front Plates 6MM',
-    'Heavy Duty Flanges MS',
-    'Power Press Components',
-  ],
-  'service_mechanical_1778761074973.png': [
-    'Leyland Front Engine Plates',
-    'Precision Shaft Components',
-    'Mechanical Seal Housings',
-  ],
-  'service_chemical_1778761046335.png': [
-    'Metacon Engine Mounting Plate',
-    'Chemical Resistant Liners',
-    'Industrial Bearing Housings',
-  ],
-  'hero_bg_1778760928163.png': [
-    'Cabin 4018 Mounting Plates',
-    'Structural Steel Supports',
-  ],
-  'media__1778760417375.png': [
-    'Custom Fabricated Brackets',
-    'Hydraulic Cylinder Parts',
-  ],
-  'media__1778760417409.png': [
-    'Tata Ace Gear Box Plates',
-    'Transmission Mounting Kits',
-  ],
-  'media__1778760417430.png': [
-    'Chassis Reinforcement Plates',
-    'Axle Mounting Assemblies',
-  ],
-  'media__1778760417507.png': [
-    'Radiator Support Brackets',
-    'Engine Bay Mounting Rails',
-  ],
-  'media__1778760417516.png': [
-    'Suspension Mounting Plates',
-    'Frame Cross Members',
-  ],
-  'about_worker_1778760981240.png': [
-    'Fabricated Base Plates',
-    'Custom CNC Machined Parts',
+    'Shafts',
+    'Bush Pin',
+    'Long Pin',
   ],
 };
 

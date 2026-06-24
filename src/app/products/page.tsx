@@ -1,70 +1,50 @@
 import type { Metadata } from 'next';
-import PageBanner from '@/components/ui/PageBanner';
-import ProductGrid from '@/components/ui/product-grid';
 import { connectDB } from '@/lib/mongodb';
-import { Product } from '@/models/Product';
+import { ProductCategory } from '@/models/ProductCategory';
+import ProductsClient from './ProductsClient';
 
 export const dynamic = 'force-dynamic';
 
-interface ProductData {
+interface CategoryData {
   _id: string;
-  title: string;
-  src: string;
-  createdAt: Date;
+  name: string;
+  slug: string;
+  coverImage: string;
+  images: string[];
 }
 
 export const metadata: Metadata = {
   title: 'Products',
   description:
-    'Browse our catalog of high-quality steel products including mounting plates, CTL sheets, custom fabricated components, and precision-machined parts by Aeron Steels Private Limited.',
+    'Explore our range of precision-engineered components — Bush Pin, Long Pin, and Shaft. High-quality CNC turned parts by Shree Shyam Precision.',
   openGraph: {
-    title: 'Products | Aeron Steels',
+    title: 'Products | Shree Shyam Precision',
     description:
-      'Steel products catalog — mounting plates, CTL sheets, fabricated components, and more from Aeron Steels.',
+      'Precision CNC turned components — Bush Pin, Long Pin, Shaft and more from Shree Shyam Precision.',
   },
 };
 
-async function getProducts(): Promise<ProductData[]> {
+async function getCategories(): Promise<CategoryData[]> {
   try {
     await connectDB();
-    const products = await Product.find()
-      .sort({ createdAt: -1 })
-      .limit(100)
+    const categories = await ProductCategory.find({ isActive: true })
+      .sort({ name: 1 })
+      .select('name slug coverImage images')
       .lean();
-    return products.map((p) => ({
-      _id: (p._id as { toString(): string }).toString(),
-      title: p.title,
-      src: p.src,
-      createdAt: p.createdAt,
+    return categories.map((c) => ({
+      _id: (c._id as { toString(): string }).toString(),
+      name: c.name,
+      slug: c.slug,
+      coverImage: c.coverImage,
+      images: c.images,
     }));
   } catch (error) {
-    console.error('getProducts error:', error);
+    console.error('getCategories error:', error);
     return [];
   }
 }
 
 export default async function ProductsPage() {
-  const products = await getProducts();
-
-  return (
-    <main>
-      <PageBanner
-        title="Products"
-        subtitle="Home > Products"
-        bgImage="/images/service_material_1778761584582.png"
-      />
-
-      <section className="py-28 bg-white">
-        <div className="max-w-[1240px] mx-auto px-6">
-          {products.length === 0 ? (
-            <p className="text-center text-gray-400 text-lg">
-              No products available yet. Connect MongoDB and add products to get started.
-            </p>
-          ) : (
-            <ProductGrid products={products} />
-          )}
-        </div>
-      </section>
-    </main>
-  );
+  const categories = await getCategories();
+  return <ProductsClient categories={categories} />;
 }

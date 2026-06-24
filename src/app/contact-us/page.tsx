@@ -4,11 +4,11 @@ import ContactUsClient from './ContactUsClient';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Aeron Steels Private Limited. Visit our office in Rohtak, Haryana, call us at +91 8307028125, or use the contact form to send us a message.',
+    'Get in touch with Shree Shyam Precision. Visit our office in Rohtak, Haryana, call us at +91 9728797360, or use the contact form to send us a message.',
   openGraph: {
-    title: 'Contact Us | Aeron Steels',
+    title: 'Contact Us | Shree Shyam Precision',
     description:
-      'Contact Aeron Steels in Rohtak, Haryana. Call +91 8307028125 or email aeronsteels28@gmail.com.',
+      'Contact Shree Shyam Precision in Rohtak, Haryana. Call +91 9728797360 or email md@shreeshyamprecision.',
   },
 };
 

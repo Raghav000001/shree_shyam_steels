@@ -48,10 +48,7 @@ export default function AboutUsClient() {
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Founded with a vision to deliver quality, precision, and reliability in the steel and manufacturing sector,
-            Aeron Steels Pvt. Ltd. has quickly grown into a trusted name in steel processing and component manufacturing.
-            What began as a commitment to meeting industry demands with dependable solutions has evolved into a company
-            capable of serving diverse customer requirements with efficiency and consistency.
+            Established in 2026, Shree Shyam Precision was founded with a vision to deliver high-quality precision CNC machined components to various industries. From the very beginning, our focus has been on precision, quality and customer satisfaction.
           </motion.p>
           <motion.p
             className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base"
@@ -60,10 +57,7 @@ export default function AboutUsClient() {
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Over the years, we have strengthened our expertise in flat steel processing, including slitted coils,
-            cut-to-length sheets and strips, while also expanding our capabilities in precision component manufacturing.
-            By combining technical knowledge, manufacturing excellence, and a customer-centric approach, we have built
-            a strong foundation rooted in quality and trust.
+            Equipped with CNC machines and modern manufacturing practices, we specialize in the production of precision turned and machined components as per customer requirements. Our commitment to maintaining strict quality standards ensures reliable and consistent products.
           </motion.p>
           <motion.p
             className="text-gray-600 leading-relaxed text-sm md:text-base"
@@ -72,10 +66,7 @@ export default function AboutUsClient() {
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Today, Aeron Steels Pvt. Ltd. stands as an integrated solutions provider, transforming raw steel into
-            precision-engineered products tailored to customer requirements. Backed by strong manufacturing capabilities
-            and an unwavering focus on quality, we continue to move forward with a commitment to innovation, reliability,
-            and long-term partnerships.
+            As a growing company, we continuously strive to enhance our manufacturing capabilities, adopt new technologies and build long-term relationships with our customers through dependable service and timely delivery. With a strong foundation and a dedication to excellence, we are committed to establishing ourselves as a trusted name in the CNC manufacturing industry.
           </motion.p>
         </div>
       </motion.section>
@@ -147,7 +138,7 @@ export default function AboutUsClient() {
         </div>
       </section>
 
-      <ExhibitionsSection />
+      {/* <ExhibitionsSection /> */}
     </main>
   );
 }

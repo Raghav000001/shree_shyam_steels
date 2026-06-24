@@ -10,10 +10,10 @@ export default function Footer() {
           {/* Col 1 */}
           <div className="lg:col-span-4">
             <h1 className="text-3xl font-black uppercase tracking-wide text-white mb-6">
-              <span className="text-[#FF5B22]">AERON</span> STEELS
+              SHREE SHYAM <span className="text-[#FF5B22]">PRECISION</span>
             </h1>
             <p className="text-sm leading-8 text-gray-400 mb-8 pr-4">
-              At ASPL, we specialize in high-quality steel products, committed to excellence and innovation in manufacturing. Our dedication ensures we meet the diverse needs of our clients across various industries.
+              At Shree Shyam Precision, we specialize in high-quality precision CNC turned components, committed to excellence and innovation in manufacturing. Our dedication ensures we meet the diverse needs of our clients across various industries.
             </p>
             <Link href="/about-us" className="bg-[#FF5B22] hover:bg-[#e04b19] text-white font-bold py-3 px-8 rounded-full uppercase text-[0.75rem] transition-colors duration-300 inline-block">
               KNOW MORE ⊕
@@ -55,24 +55,23 @@ export default function Footer() {
             <div className="flex flex-col gap-6 text-sm text-gray-400">
               <div className="flex gap-4">
                 <span className="text-[#FF5B22] text-xl mt-1">⌂</span>
-                <p className="leading-relaxed">Khewat no 1306, Village Baniyani,<br/>Bhiwani Road, Rohtak, Haryana 124001</p>
+                <p className="leading-relaxed">Plot No. 92 HSIIDC Industrial Area,<br/>Hisar Road, Rohtak, Haryana 124001</p>
               </div>
               <div className="flex gap-4 items-center">
                 <span className="text-[#FF5B22] text-xl">📱</span>
-                <strong className="text-white text-lg tracking-wider">+91 8307028125</strong>
+                <strong className="text-white text-lg tracking-wider">+91 9728797360</strong>
               </div>
               <div className="flex gap-4 items-center">
                 <span className="text-[#FF5B22] text-xl">✉</span>
-                <p>aeronsteels28@gmail.com</p>
+                <p>md@shreeshyamprecision</p>
               </div>
             </div>
 
             <div className="flex gap-3 mt-8">
               {[
-                { label: 'f', href: 'https://facebook.com/aeronsteels', aria: 'Facebook' },
-                { label: 't', href: 'https://twitter.com/aeronsteels', aria: 'Twitter' },
-                { label: 'in', href: 'https://linkedin.com/company/aeronsteels', aria: 'LinkedIn' },
-                { label: 'yt', href: 'https://youtube.com/@aeronsteels', aria: 'YouTube' },
+                { label: 'f', href: 'https://facebook.com/shyamprecision', aria: 'Facebook' },
+                { label: 'in', href: 'https://linkedin.com/company/shyamprecision', aria: 'LinkedIn' },
+                { label: 'ig', href: 'https://instagram.com/shyamprecision', aria: 'Instagram' },
               ].map((icon, i) => (
                 <Link key={i} href={icon.href} aria-label={icon.aria} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-700 hover:border-[#FF5B22] hover:bg-[#FF5B22] text-gray-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
                   {icon.label}

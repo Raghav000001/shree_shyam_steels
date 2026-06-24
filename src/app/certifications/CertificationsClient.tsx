@@ -50,7 +50,7 @@ export default function CertificationsClient() {
                   <div className="absolute inset-2 rounded border border-[#FF5B22]/20 pointer-events-none" />
                   <img
                     src="/images/certification.png"
-                    alt="Aeron Steels ISO 9001:2015 Certification"
+              alt="Shree Shyam Precision ISO 9001:2015 Certification"
                     className="w-full max-w-[400px] h-auto object-contain rounded relative z-10"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 rounded-lg transition-colors duration-300 z-20 flex items-center justify-center">
@@ -106,7 +106,7 @@ export default function CertificationsClient() {
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Aeron Steels Private Limited is officially certified under the
+                Shree Shyam Precision is officially certified under the
                 ISO 9001:2015 Quality Management System standard. This certification
                 reflects our unwavering commitment to manufacturing excellence,
                 consistent product quality, and continuous process improvement
@@ -192,7 +192,7 @@ export default function CertificationsClient() {
               transition={{ duration: 0.6, delay: 0.2 }}
             />
             <p className="text-gray-500 text-sm md:text-base leading-relaxed">
-              At Aeron Steels, certification is not just a document — it is a daily practice.
+              At Shree Shyam Precision, certification is not just a document — it is a daily practice.
               Every product that leaves our facility meets the rigorous standards set by our
               ISO 9001:2015 certified quality management system. From raw material inspection
               to final dispatch, quality is built into every step of our process.

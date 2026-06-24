@@ -58,11 +58,11 @@ export default function AboutSection() {
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                About Aeron Steels
+                About Shree Shyam Precision
               </motion.span>
               <div className="flex flex-col items-start gap-4">
                 <h2 className="text-3xl lg:text-4xl uppercase leading-tight font-bold text-gray-800">
-                  <span className="text-[#FF5B22]">From Coil</span> to Component
+                  <span className="text-[#FF5B22]">Precision CNC</span> Manufacturing
                 </h2>
                 <motion.div 
                   className="w-12 h-1 bg-[#FF5B22]"
@@ -81,10 +81,7 @@ export default function AboutSection() {
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              At Aeron Steels Private Limited, we transform steel into high-performance solutions. 
-              From steel coil processing and cut-to-length sheets & strips to precisely engineered 
-              components manufacturing. We combine engineering, quality and reliability to meet 
-              evolving industry standards.
+              We are a precision engineering company specializing in the manufacturing of high-quality CNC turned and machined components. Equipped with advanced CNC machines and modern manufacturing practices, we deliver precision components that meet diverse industrial requirements. Our focus is on quality, consistency, and timely delivery.
             </motion.p>
             <motion.p 
               className="text-gray-600 mb-8 leading-relaxed"
@@ -93,10 +90,7 @@ export default function AboutSection() {
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Driven by engineering excellence and manufacturing expertise, we bring together 
-              steel processing and precision component manufacturing under one roof. We combine 
-              technical know-how with robust production capabilities to timely deliver dependable 
-              solutions tailored to industry demands.
+              With extensive experience in CNC machining and component manufacturing, we have developed strong expertise in producing precision parts with tight tolerances. Our key strengths include advanced manufacturing capabilities, strict quality control, and a commitment to customer satisfaction. We strive to build long-term relationships by delivering reliable products and dependable service.
             </motion.p>
 
             <motion.div
@@ -108,7 +102,7 @@ export default function AboutSection() {
             >
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-[#FF5B22]">
-                  <AnimatedCounter from={0} to={60} suffix="+" />
+                  <AnimatedCounter from={0} to={25} suffix="+" />
                 </div>
                 <div className="text-xs lg:text-sm text-gray-500 mt-1">Trusted Buyers</div>
               </div>
@@ -120,7 +114,7 @@ export default function AboutSection() {
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-[#FF5B22]">
-                  <AnimatedCounter from={0} to={25} suffix="+" />
+                  <AnimatedCounter from={0} to={5} suffix="+" />
                 </div>
                 <div className="text-xs lg:text-sm text-gray-500 mt-1">Years of Experience</div>
               </div>

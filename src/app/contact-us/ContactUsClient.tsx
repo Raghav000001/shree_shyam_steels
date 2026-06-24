@@ -266,7 +266,7 @@ export default function ContactUsClient() {
                   transition={{ duration: 0.4, delay: 0.1 }}
                 >
                   <span className="text-[#FF5B22] text-xl mt-0.5">&#8962;</span>
-                  <p>Khewat no 1306, Village Baniyani,<br />Bhiwani Road, Rohtak, Haryana 124001</p>
+                  <p>Plot No. 92 HSIIDC Industrial Area,<br />Hisar Road, Rohtak, Haryana 124001</p>
                 </motion.div>
                 <motion.div
                   className="flex gap-4 items-center"
@@ -276,7 +276,7 @@ export default function ContactUsClient() {
                   transition={{ duration: 0.4, delay: 0.2 }}
                 >
                   <span className="text-[#FF5B22] text-xl">&#128241;</span>
-                  <strong>+91 8307028125</strong>
+                  <strong>+91 9728797360</strong>
                 </motion.div>
                 <motion.div
                   className="flex gap-4 items-center"
@@ -286,7 +286,7 @@ export default function ContactUsClient() {
                   transition={{ duration: 0.4, delay: 0.3 }}
                 >
                   <span className="text-[#FF5B22] text-xl">&#9993;</span>
-                  <p>aeronsteels28@gmail.com</p>
+                  <p>md@shreeshyamprecision</p>
                 </motion.div>
               </div>
 
@@ -298,14 +298,14 @@ export default function ContactUsClient() {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <iframe
-                  src="https://www.google.com/maps?q=Khewat+no+1306,+Village+Baniyani,+Bhiwani+Road,+Rohtak,+Haryana+124001&output=embed"
+                  src="https://www.google.com/maps?q=Plot+No.+92+HSIIDC+Industrial+Area,+Hisar+Road,+Rohtak,+Haryana+124001&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Aeron Steels Office Location"
+                  title="Shree Shyam Precision Office Location"
                   className="w-full h-full"
                 />
               </motion.div>

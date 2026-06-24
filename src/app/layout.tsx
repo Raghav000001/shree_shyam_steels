@@ -9,37 +9,37 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.SITE_URL || "https://aeron-steels-final.vercel.app";
+const siteUrl = process.env.SITE_URL || "https://shreeshyamprecision.com";
 
 export const metadata: Metadata = {
   title: {
-    default: "Aeron Steels | Steel Manufacturing & Fabrication in Rohtak, Haryana",
-    template: "%s | Aeron Steels",
+    default: "Shree Shyam Precision | CNC Machining & Component Manufacturing in Rohtak, Haryana",
+    template: "%s | Shree Shyam Precision",
   },
   description:
-    "Aeron Steels Private Limited (ASPL) — ISO 9001:2015 certified steel manufacturing, custom fabrication, precision cutting, and durable steel products in Rohtak, Haryana. 10+ years of industrial excellence.",
+    "Shree Shyam Precision — precision CNC turned components, quality machining, and durable industrial parts in Rohtak, Haryana. ISO 9001:2015 certified quality management.",
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Aeron Steels",
-    title: "Aeron Steels | Steel Manufacturing & Fabrication",
+    siteName: "Shree Shyam Precision",
+    title: "Shree Shyam Precision | CNC Machining & Component Manufacturing",
     description:
-      "ISO 9001:2015 certified steel manufacturing, custom fabrication, and precision cutting by Aeron Steels Private Limited, Rohtak, Haryana.",
+      "Precision CNC turned components, quality machining, and durable industrial parts by Shree Shyam Precision, Rohtak, Haryana.",
     images: [
       {
         url: "/images/logo.png",
         width: 800,
         height: 600,
-        alt: "Aeron Steels Logo",
+        alt: "Shree Shyam Precision Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aeron Steels | Steel Manufacturing & Fabrication",
+    title: "Shree Shyam Precision | CNC Machining & Component Manufacturing",
     description:
-      "ISO 9001:2015 certified steel manufacturing and fabrication by Aeron Steels Private Limited.",
+      "Precision CNC turned components and quality machining by Shree Shyam Precision.",
     images: ["/images/logo.png"],
   },
   icons: {
@@ -56,14 +56,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Aeron Steels Private Limited",
+  name: "Shree Shyam Precision",
   url: siteUrl,
   logo: `${siteUrl}/images/logo.png`,
   description:
-    "High-quality steel products, custom fabrication, and precision cutting services.",
+    "Precision CNC turned components, quality machining, and durable industrial parts.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Khewat no 1306, Village Baniyani, Bhiwani Road",
+    streetAddress: "Plot No. 92 HSIIDC Industrial Area, Hisar Road",
     addressLocality: "Rohtak",
     addressRegion: "Haryana",
     postalCode: "124001",
@@ -71,19 +71,20 @@ const jsonLd = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+91-8307028125",
+    telephone: "+91-9728797360",
     contactType: "sales",
-    email: "aeronsteels28@gmail.com",
+    email: "md@shreeshyamprecision",
   },
   knowsAbout: [
-    "Steel Manufacturing",
-    "Custom Fabrication",
-    "Precision Cutting",
+    "CNC Machining",
+    "Precision Components",
+    "CNC Turning",
     "Component Manufacturing",
-    "Mounting Plates",
-    "CTL Sheets",
+    "Auto Parts",
+    "Industrial Machining",
   ],
 };
+
 
 export default function RootLayout({
   children,

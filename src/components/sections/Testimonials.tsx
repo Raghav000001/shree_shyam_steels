@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 const exhibitionImages = [
   {
     src: '/photos/home/automechanika_delhi_1.jpg',
-    alt: 'ACMA Automechanika 2026, New Delhi - Aeron Steels Booth'
+    alt: 'ACMA Automechanika 2026, New Delhi - Shree Shyam Precision Booth'
   },
   {
     src: '/photos/home/automechanika_delhi_2.jpg',
-    alt: 'ACMA Automechanika 2026, New Delhi - Exhibition View'
+    alt: 'ACMA Automechanika 2026, New Delhi - Exhibition'
   }
 ];
 

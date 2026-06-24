@@ -6,11 +6,7 @@
  *
  * Directory layout:
  *   public/Item Details/
- *     Centre Bearing Brackets/  (display: "Center Bearing Packets")
- *     Mountings Plates/         (display: "Mounting Plates")
- *     Suspension Parts/         (display: "Suspension Plates")
- *     HR, HRPO & CRCA Slit Coils/     (page — spec showcase)
- *     HR, HRPO & CRCA Sheets & Strips/ (page — spec showcase)
+ *     Auto Parts/   (display: "Auto Products")
  */
 
 import fs from 'fs';
@@ -33,33 +29,9 @@ export interface CategoryInfo {
 
 export const CATEGORIES: CategoryInfo[] = [
   {
-    slug: 'center-bearing-Brackets',
-    displayName: 'Center Bearing Brackets',
-    dirName: 'Centre Bearing Brackets',
-    hasPage: true,
-  },
-  {
-    slug: 'mounting-parts',
-    displayName: 'Mounting Parts',
-    dirName: 'Mountings Plates',
-    hasPage: true,
-  },
-  {
-    slug: 'suspension-parts',
-    displayName: 'Suspension Parts',
-    dirName: 'Suspension Parts',
-    hasPage: true,
-  },
-  {
-    slug: 'hr-hrpo-crca-slit-coils',
-    displayName: 'HR / HRPO & CRCA Slit Coils',
-    dirName: 'HR, HRPO & CRCA Slit Coils',
-    hasPage: true,
-  },
-  {
-    slug: 'hr-hrpo-crca-sheets-strips',
-    displayName: 'HR / HRPO & CRCA Sheets & Strips',
-    dirName: 'HR, HRPO & CRCA Sheets & Strips',
+    slug: 'auto-products',
+    displayName: 'Auto Products',
+    dirName: 'Auto Parts',
     hasPage: true,
   },
 ];

@@ -11,19 +11,19 @@ const mailGenerator = new Mailgen({
     plaintextPath: path.join(process.cwd(), 'node_modules/mailgen/themes/default/index.txt'),
   },
   product: {
-    name: 'Aeron Steels',
+    name: 'Shree Shyam Precision',
     link: siteUrl,
-    copyright: `Copyright © ${new Date().getFullYear()} Aeron Steels. All rights reserved.`,
+    copyright: `Copyright © ${new Date().getFullYear()} Shree Shyam Precision. All rights reserved.`,
   },
 });
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.gmail.com',
-  port: Number(process.env.SMTP_PORT) || 587,
+  host: ENV.SMTP_HOST,
+  port: ENV.SMTP_PORT,
   secure: false,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: ENV.SMTP_USER,
+    pass: ENV.SMTP_PASS,
   },
 });
 
@@ -39,7 +39,7 @@ const GREEN = '#22BC66';
 export async function sendContactNotification(data: ContactFormData): Promise<void> {
   const emailContent = mailGenerator.generate({
     body: {
-      name: 'Aeron Steels Team',
+      name: 'Shree Shyam Precision Team',
       title: `New Contact Form Submission`,
       intro: [
         `You have received a new inquiry from ${data.name}.`,
@@ -70,8 +70,8 @@ export async function sendContactNotification(data: ContactFormData): Promise<vo
   });
 
   await transporter.sendMail({
-    from: `"Aeron Steels Contact" <${process.env.SMTP_USER}>`,
-    to: process.env.CONTACT_EMAIL || 'aeronsteels28@gmail.com',
+    from: `"Shree Shyam Precision Contact" <${ENV.SMTP_USER}>`,
+    to: ENV.CONTACT_EMAIL,
     subject: `New Inquiry: ${data.subject} from ${data.name}`,
     html: emailContent,
     replyTo: data.email,
@@ -102,16 +102,16 @@ export async function sendSubmissionAcknowledgment(data: ContactFormData): Promi
         },
       },
       outro: [
-        `If you have any urgent concerns, feel free to call us at +91 8307028125.`,
-        `Thank you for choosing Aeron Steels.`,
+        `If you have any urgent concerns, feel free to call us at +91 9728797360.`,
+        `Thank you for choosing Shree Shyam Precision.`,
       ],
     },
   });
 
   await transporter.sendMail({
-    from: `"Aeron Steels" <${process.env.SMTP_USER}>`,
+    from: `"Shree Shyam Precision" <${ENV.SMTP_USER}>`,
     to: data.email,
-    subject: `Thank You for Contacting Aeron Steels`,
+    subject: `Thank You for Contacting Shree Shyam Precision`,
     html: emailContent,
   });
 }
