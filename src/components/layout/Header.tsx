@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans">
-            <div
+      <div
         className={`transition-all duration-300 ${
           scrolled
             ? 'bg-[#1C1D1F] border-b border-white/5'
@@ -79,12 +79,12 @@ export default function Header() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex items-center justify-between h-[72px] md:h-20 lg:h-[100px]">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex items-center justify-between h-14 md:h-16 lg:h-[72px]">
           <Link href="/" className="flex items-center gap-2 md:gap-6 lg:gap-7 flex-shrink-0">
             <img
               src="/images/logo1.png"
               alt="Shree Shyam Precision"
-              className="hidden md:block h-[45px] lg:h-[90px] w-auto object-contain"
+              className="hidden md:block h-14 lg:h-20 w-auto object-contain -my-2"
             />
             <div className="block md:hidden">
               <h1 className="text-lg font-black uppercase tracking-wide text-white leading-tight whitespace-nowrap">
@@ -217,5 +217,3 @@ export default function Header() {
     </header>
   );
 }
-
-

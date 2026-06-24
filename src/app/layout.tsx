@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import HowItWorks from "@/components/sections/HowItWorks";
 import "./globals.css";
 
 const inter = Inter({
@@ -100,6 +101,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
+        <HowItWorks />
         <Footer />
       </body>
     </html>
