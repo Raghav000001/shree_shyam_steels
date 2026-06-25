@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ConditionalHowItWorks from "@/components/layout/ConditionalHowItWorks";
+import FloatingActions from "@/components/layout/FloatingActions";
 import "./globals.css";
 
 const inter = Inter({
@@ -102,6 +103,7 @@ export default function RootLayout({
         {children}
         <ConditionalHowItWorks />
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );
