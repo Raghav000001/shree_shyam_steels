@@ -26,7 +26,7 @@ export default function CertificationsClient() {
       <PageBanner
         title="Certifications"
         subtitle="Home > Certifications"
-        bgImage="/photos/home/service_quality_assurance.png"
+        bgImage="/images/certification_hero.jpeg"
         bgPosition="center 30%"
       />
 
