@@ -32,7 +32,7 @@ export default function InfrastructureClient() {
       <PageBanner
         title="Infrastructure"
         subtitle="Home > Infrastructure"
-        bgImage="/photos/home/hero_cnc_turning.png"
+        bgImage="/images/infra_hero.jpeg"
       />
 
       <section className="py-20 md:py-28 bg-white overflow-hidden">
