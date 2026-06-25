@@ -65,7 +65,7 @@ export default function ContactUsClient() {
       <PageBanner
         title="Contact Us"
         subtitle="Home > Contact Us"
-        bgImage="/photos/home/service_precision_machining.png"
+        bgImage="/images/contact_hero.jpeg"
       />
 
       <section className="py-20 md:py-28 bg-white overflow-hidden">
