@@ -108,7 +108,7 @@ export default function AboutSection() {
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-[#FF5B22]">
-                  <AnimatedCounter from={0} to={10} suffix="+" />
+                  <AnimatedCounter from={0} to={15} suffix="+" />
                 </div>
                 <div className="text-xs lg:text-sm text-gray-500 mt-1">Employees</div>
               </div>
@@ -150,7 +150,7 @@ export default function AboutSection() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
                 <img 
-                  src="/photos/home/big_circle.jpg" 
+                  src="/images/big_circle.jpeg" 
                   alt="Factory Interior" 
                   className="w-full h-full object-cover"
                 />
@@ -171,7 +171,7 @@ export default function AboutSection() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               >
                 <img 
-                  src="/photos/home/small_circle.jpg" 
+                  src="/photos/home/service_cnc_turning.png" 
                   alt="Industrial detail" 
                   className="w-full h-full object-cover"
                 />

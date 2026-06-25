@@ -79,18 +79,13 @@ export default function Header() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex items-center justify-between h-14 md:h-16 lg:h-[72px]">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex items-center justify-between h-20 md:h-24 lg:h-[90px]">
           <Link href="/" className="flex items-center gap-2 md:gap-6 lg:gap-7 flex-shrink-0">
             <img
               src="/images/logo1.png"
               alt="Shree Shyam Precision"
-              className="hidden md:block h-14 lg:h-20 w-auto object-contain -my-2"
+              className="block h-14 sm:h-16 lg:h-[85px] w-auto object-contain translate-y-1 lg:translate-y-2 scale-105"
             />
-            <div className="block md:hidden">
-              <h1 className="text-lg font-black uppercase tracking-wide text-white leading-tight whitespace-nowrap">
-                SHREE SHYAM <span className="text-[#FF5B22]">PRECISION</span>
-              </h1>
-            </div>
           </Link>
 
           <ul className="hidden md:flex items-center gap-4 lg:gap-8 flex-shrink-0 whitespace-nowrap">
