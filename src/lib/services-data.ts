@@ -39,7 +39,7 @@ export const services: ServiceData[] = [
     id: 2,
     title: 'Durable Products',
     shortDesc: 'We use quality raw materials and advanced machining processes to deliver durable and reliable products.',
-    img: '/photos/home/service_durable_products.png',
+    img: '/images/durable_products.jpeg',
     details: [
       'Manufactured using quality raw materials',
       'Advanced machining processes for enhanced durability',
