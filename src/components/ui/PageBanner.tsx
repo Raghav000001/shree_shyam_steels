@@ -4,15 +4,16 @@ interface PageBannerProps {
   title: string;
   subtitle?: string;
   bgImage?: string;
+  bgPosition?: string;
 }
 
-export default function PageBanner({ title, subtitle, bgImage = "/images/hero_bg_1778760928163.png" }: PageBannerProps) {
+export default function PageBanner({ title, subtitle, bgImage = "/images/hero_bg_1778760928163.png", bgPosition = "center" }: PageBannerProps) {
   return (
     <section className="relative w-full h-[550px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        className="absolute inset-0 bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url(${bgImage})`, backgroundPosition: bgPosition }}
       ></div>
       
       {/* Overlay */}

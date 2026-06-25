@@ -90,9 +90,6 @@ export default function Header() {
               <h1 className="text-lg font-black uppercase tracking-wide text-white leading-tight whitespace-nowrap">
                 SHREE SHYAM <span className="text-[#FF5B22]">PRECISION</span>
               </h1>
-              <span className="text-[10px] text-gray-400 uppercase font-medium tracking-widest block whitespace-nowrap">
-                Private Limited
-              </span>
             </div>
           </Link>
 

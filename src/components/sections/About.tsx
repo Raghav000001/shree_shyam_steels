@@ -81,7 +81,7 @@ export default function AboutSection() {
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              We are a precision engineering company specializing in the manufacturing of high-quality CNC turned and machined components. Equipped with advanced CNC machines and modern manufacturing practices, we deliver precision components that meet diverse industrial requirements. Our focus is on quality, consistency, and timely delivery.
+              We are a precision engineering company specializing in the manufacturing of high-quality CNC turned and machined components. Equipped with advanced CNC machines and modern manufacturing practices, we deliver precision components that meet diverse industrial requirements. Our focus is on quality, consistency and timely delivery.
             </motion.p>
             <motion.p 
               className="text-gray-600 mb-8 leading-relaxed"
@@ -90,7 +90,7 @@ export default function AboutSection() {
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              With extensive experience in CNC machining and component manufacturing, we have developed strong expertise in producing precision parts with tight tolerances. Our key strengths include advanced manufacturing capabilities, strict quality control, and a commitment to customer satisfaction. We strive to build long-term relationships by delivering reliable products and dependable service.
+              With extensive experience in CNC machining and component manufacturing, we have developed strong expertise in producing precision parts with tight tolerances. Our key strengths include advanced manufacturing capabilities, strict quality control and a commitment to customer satisfaction. We strive to build long-term relationships by delivering reliable products and dependable service.
             </motion.p>
 
             <motion.div
@@ -102,21 +102,15 @@ export default function AboutSection() {
             >
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-[#FF5B22]">
-                  <AnimatedCounter from={0} to={25} suffix="+" />
+                  <AnimatedCounter from={0} to={5} suffix="+" />
                 </div>
                 <div className="text-xs lg:text-sm text-gray-500 mt-1">Trusted Buyers</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-[#FF5B22]">
-                  <AnimatedCounter from={0} to={50} suffix="+" />
+                  <AnimatedCounter from={0} to={10} suffix="+" />
                 </div>
                 <div className="text-xs lg:text-sm text-gray-500 mt-1">Employees</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-[#FF5B22]">
-                  <AnimatedCounter from={0} to={5} suffix="+" />
-                </div>
-                <div className="text-xs lg:text-sm text-gray-500 mt-1">Years of Experience</div>
               </div>
             </motion.div>
 

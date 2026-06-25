@@ -13,25 +13,25 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    bgImage: '/photos/home/big_circle.jpg',
+    bgImage: '/photos/home/hero_cnc_turning.png',
     lightText: 'Shree Shyam Precision',
     boldText: 'EXCELLENCE',
     description:
       'We are engaged in the manufacturing of precision CNC turned components, delivering reliable quality and superior performance to our customers.',
   },
   {
-    bgImage: '/photos/home/big_circle.jpg',
+    bgImage: '/photos/home/hero_cnc_turning.png',
     lightText: 'PRECISION',
     boldText: 'MACHINING',
     description:
-      'Manufacturing high-precision CNC turned components with advanced technology and strict quality control. Delivering accuracy, consistency, and reliability in every part.',
+      'Manufacturing high-precision CNC turned components with advanced technology and strict quality control. Delivering accuracy, consistency and reliability in every part.',
   },
   {
-    bgImage: '/photos/home/big_circle.jpg',
+    bgImage: '/photos/home/hero_cnc_turning.png',
     lightText: 'QUALITY',
     boldText: 'ASSURANCE',
     description:
-      'Every component undergoes rigorous inspection and quality checks to ensure superior performance, dimensional accuracy, and customer satisfaction.',
+      'Every component undergoes rigorous inspection and quality checks to ensure superior performance, dimensional accuracy and customer satisfaction.',
   },
 ];
 

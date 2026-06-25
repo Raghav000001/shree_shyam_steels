@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import HowItWorks from "@/components/sections/HowItWorks";
+import ConditionalHowItWorks from "@/components/layout/ConditionalHowItWorks";
 import "./globals.css";
 
 const inter = Inter({
@@ -77,12 +77,11 @@ const jsonLd = {
     email: "md@shreeshyamprecision",
   },
   knowsAbout: [
-    "CNC Machining",
-    "Precision Components",
     "CNC Turning",
-    "Component Manufacturing",
-    "Auto Parts",
-    "Industrial Machining",
+    "Precision Machined Components",
+    "Custom Manufacturing Solutions",
+    "Quality Inspection & Assurance",
+    "Assembly & Finishing Services",
   ],
 };
 
@@ -101,7 +100,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
-        <HowItWorks />
+        <ConditionalHowItWorks />
         <Footer />
       </body>
     </html>

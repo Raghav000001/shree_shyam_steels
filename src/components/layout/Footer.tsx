@@ -40,10 +40,12 @@ export default function Footer() {
               Our Services
             </h4>
             <ul className="flex flex-col gap-4 text-sm text-gray-400">
-              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Custom Sheet Metal Components</Link></li>
-              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Slitted Coils</Link></li>
-              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Cut-to-length Sheets & Strips</Link></li>
-              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Custom Bar Components</Link></li>
+              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> CNC Turning</Link></li>
+              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Precision Machined Components</Link></li>
+              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Custom Manufacturing Solutions</Link></li>
+              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Quality Inspection & Assurance</Link></li>
+              <li><Link href="/contact-us" className="hover:text-[#FF5B22] transition-colors flex items-center gap-2"><span className="text-[#FF5B22] text-xs">▸</span> Assembly & Finishing Services</Link></li>
+
             </ul>
           </div>
 

@@ -5,14 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PageBanner from '@/components/ui/PageBanner';
 
 const images: { src: string; name: string }[] = [
-  { src: '/photos/infra/cnc_machine.jpg', name: 'CNC Machine' },
-  { src: '/photos/infra/cold_rolling_mill.jpeg', name: 'Cold Rolling Mill' },
-  { src: '/photos/infra/cut_to_length_line.jpg', name: 'Cut to Length Line' },
-  { src: '/photos/infra/induction_hardening_machine.png', name: 'Induction Hardening Machine' },
-  { src: '/photos/infra/power_presses.jpg', name: 'Power Presses' },
-  { src: '/photos/infra/shearing_machines.webp', name: 'Shearing Machines' },
-  { src: '/photos/infra/slitting_line.jpg', name: 'Slitting Line' },
-  { src: '/photos/infra/vmc_machine.jpg', name: 'VMC Machine' },
+  { src: '/photos/home/hero_cnc_turning.png', name: 'CNC Turning Centre' },
+  { src: '/photos/home/service_cnc_turning.png', name: 'CNC Lathe Machine' },
+  { src: '/photos/home/service_precision_machining.png', name: 'CNC Machining Centre' },
+  { src: '/photos/home/service_quality_assurance.png', name: 'Quality Inspection Lab' },
+  { src: '/photos/home/service_cnc_components.png', name: 'Finished Components Bay' },
+  { src: '/photos/about/hero_about_us.png', name: 'Production Floor' },
 ];
 
 const containerVariants = {
@@ -36,7 +34,7 @@ export default function InfrastructureClient() {
       <PageBanner
         title="Infrastructure"
         subtitle="Home > Infrastructure"
-        bgImage="/photos/infra/cnc_machine.jpg"
+        bgImage="/photos/home/hero_cnc_turning.png"
       />
 
       <section className="py-20 md:py-28 bg-white overflow-hidden">

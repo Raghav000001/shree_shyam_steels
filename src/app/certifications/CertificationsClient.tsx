@@ -7,7 +7,7 @@ import PageBanner from '@/components/ui/PageBanner';
 const trustIndicators = [
   { label: 'Certification Body', value: 'EAS (Member of IAF)' },
   { label: 'Valid Until', value: 'Annual Surveillance' },
-  { label: 'Scope', value: 'Steel Manufacturing & Fabrication' },
+  { label: 'Scope', value: 'Manufacture And Supply Of Precision CNC Turned Components' },
   { label: 'Standard', value: 'ISO 9001:2015' },
 ];
 
@@ -26,7 +26,8 @@ export default function CertificationsClient() {
       <PageBanner
         title="Certifications"
         subtitle="Home > Certifications"
-        bgImage="/images/service_chemical_1778761046335.png"
+        bgImage="/photos/home/service_quality_assurance.png"
+        bgPosition="center 30%"
       />
 
       <section className="py-20 md:py-28 bg-white overflow-hidden">
@@ -109,7 +110,7 @@ export default function CertificationsClient() {
                 Shree Shyam Precision is officially certified under the
                 ISO 9001:2015 Quality Management System standard. This certification
                 reflects our unwavering commitment to manufacturing excellence,
-                consistent product quality, and continuous process improvement
+                consistent product quality and continuous process improvement
                 across all operations.
               </motion.p>
               <motion.div

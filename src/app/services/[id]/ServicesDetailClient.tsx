@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import PageBanner from '@/components/ui/PageBanner';
 import type { ServiceData } from '@/lib/services-data';
 
 interface ServicesDetailClientProps {
@@ -12,13 +13,11 @@ interface ServicesDetailClientProps {
 export default function ServicesDetailClient({ service }: ServicesDetailClientProps) {
   return (
     <main className="min-h-screen bg-white">
-      <div className="w-full border-b border-gray-100 bg-gray-50">
-        <div className="max-w-[1240px] mx-auto px-6 py-4 flex items-center gap-2 text-sm">
-          <Link href="/" className="text-gray-400 hover:text-[#FF5B22] transition-colors">Home</Link>
-          <span className="text-gray-300">/</span>
-          <span className="text-gray-800 font-medium">{service.title}</span>
-        </div>
-      </div>
+      <PageBanner
+        title={service.title}
+        subtitle={`Home > Services > ${service.title}`}
+        bgImage={service.img}
+      />
 
       <section className="py-16 md:py-24">
         <div className="max-w-[1240px] mx-auto px-6">

@@ -12,7 +12,7 @@ export default function AboutUsClient() {
       <PageBanner
         title="About Us"
         subtitle="Home > About Us"
-        bgImage="/images/service_material_1778761584582.png"
+        bgImage="/photos/about/hero_about_us.png"
       />
 
       <AboutSection />
