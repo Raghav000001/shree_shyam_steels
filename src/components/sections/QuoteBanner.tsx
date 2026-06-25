@@ -9,7 +9,7 @@ export default function QuoteBannerSection() {
   return (
     <section 
       className="relative py-20 bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/photos/home/custom_sheet_metal_components.png')" }}
+      style={{ backgroundImage: "url('/images/cta.avif')" }}
     >
       <div className="absolute inset-0 bg-[#16212b]/80"></div>
       

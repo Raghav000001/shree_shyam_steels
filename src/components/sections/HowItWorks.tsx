@@ -43,7 +43,7 @@ const steps: Step[] = [
     description:
       "Finished components undergo final inspection, packing and timely dispatch to ensure customer satisfaction.",
     image:
-      "https://images.pexels.com/photos/36003974/pexels-photo-36003974.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "/images/step4.webp",
     icon: ShieldCheck,
   },
 ];

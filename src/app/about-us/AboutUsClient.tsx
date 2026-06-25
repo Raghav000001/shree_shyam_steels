@@ -103,7 +103,7 @@ export default function AboutUsClient() {
                 desc: 'Committed to the highest standards of quality in every product we deliver.',
               },
               {
-                src: '/Item Details/About Us/Customized Solutions.png',
+                src: '/images/core_values2.jpeg',
                 title: 'Customized Solutions',
                 desc: 'Tailored steel processing and component manufacturing to meet unique client requirements.',
               },

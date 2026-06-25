@@ -5,9 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PageBanner from '@/components/ui/PageBanner';
 
 const images: { src: string; name: string }[] = [
-  { src: '/photos/home/hero_cnc_turning.png', name: 'CNC Turning Centre' },
-  { src: '/photos/home/service_cnc_turning.png', name: 'CNC Lathe Machine' },
-  { src: '/photos/home/service_precision_machining.png', name: 'CNC Machining Centre' },
+  { src: '/images/cta.avif', name: 'CNC Turning Centre' },
   { src: '/photos/home/service_quality_assurance.png', name: 'Quality Inspection Lab' },
   { src: '/photos/home/service_cnc_components.png', name: 'Finished Components Bay' },
   { src: '/photos/about/hero_about_us.png', name: 'Production Floor' },

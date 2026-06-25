@@ -67,7 +67,7 @@ export const services: ServiceData[] = [
     id: 4,
     title: 'Precision Machining',
     shortDesc: 'We provide precision machining solutions for custom and complex components as per customer drawings and specifications.',
-    img: '/photos/home/service_precision_machining.png',
+    img: '/images/precision_matching.jpeg',
     details: [
       'Custom and complex component machining solutions',
       'Manufacturing as per customer drawings and specifications',
