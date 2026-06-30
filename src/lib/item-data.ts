@@ -112,7 +112,6 @@ export function imageUrl(product: ProductItem): string {
   return encodeURI(product.imagePath);
 }
 
-/* ── Summary for API ───────────────────────────────────── */
 
 export interface CategorySummary {
   slug: string;

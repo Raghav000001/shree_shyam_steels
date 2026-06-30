@@ -2,8 +2,34 @@ import type { Metadata } from 'next';
 import { connectDB } from '@/lib/mongodb';
 import { ProductCategory } from '@/models/ProductCategory';
 import ProductsClient from './ProductsClient';
+import fs from 'fs';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
+
+const PRODUCTS_DIR = path.join(process.cwd(), 'public/products');
+
+/** Read public/products/ and group image files by category slug prefix. */
+function getLocalProductImages(): Record<string, string[]> {
+  const images: Record<string, string[]> = {};
+  try {
+    const files = fs
+      .readdirSync(PRODUCTS_DIR)
+      .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
+      .sort();
+    for (const file of files) {
+      const match = file.match(/^(.*?)(\d+)\.\w+$/);
+      if (!match) continue;
+      const prefix = match[1];
+      const slug = prefix.replace(/_/g, '-').toLowerCase();
+      if (!images[slug]) images[slug] = [];
+      images[slug].push(`/products/${file}`);
+    }
+  } catch {
+    /* directory may not exist */
+  }
+  return images;
+}
 
 interface CategoryData {
   _id: string;
@@ -46,5 +72,6 @@ async function getCategories(): Promise<CategoryData[]> {
 
 export default async function ProductsPage() {
   const categories = await getCategories();
-  return <ProductsClient categories={categories} />;
+  const localImages = getLocalProductImages();
+  return <ProductsClient categories={categories} localImages={localImages} />;
 }

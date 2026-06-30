@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -14,15 +14,11 @@ interface CategoryData {
 
 interface ProductsClientProps {
   categories: CategoryData[];
+  localImages: Record<string, string[]>;
 }
 
-interface LightboxItem {
-  url: string;
-  category: string;
-}
-
-export default function ProductsClient({ categories }: ProductsClientProps) {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+export default function ProductsClient({ categories, localImages }: ProductsClientProps) {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeCat, setActiveCat] = useState<string>(categories[0]?.slug ?? '');
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -43,44 +39,6 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
       (cat) => cat.name.trim().charAt(0).toUpperCase() === activeLetter
     );
   }, [categories, activeLetter]);
-
-  const allItems = useMemo(() => {
-    const items: LightboxItem[] = [];
-    for (const cat of categories) {
-      const catImages = [cat.coverImage, ...cat.images].filter(Boolean);
-      for (const url of catImages) {
-        items.push({ url, category: cat.name });
-      }
-    }
-    return items;
-  }, [categories]);
-
-  const currentItem = lightboxIndex !== null ? allItems[lightboxIndex] : null;
-
-  const goNext = useCallback(() => {
-    setLightboxIndex((prev) => (prev !== null ? (prev + 1) % allItems.length : 0));
-  }, [allItems.length]);
-
-  const goPrev = useCallback(() => {
-    setLightboxIndex((prev) =>
-      prev !== null ? (prev - 1 + allItems.length) % allItems.length : allItems.length - 1
-    );
-  }, [allItems.length]);
-
-  useEffect(() => {
-    if (lightboxIndex === null) return;
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setLightboxIndex(null);
-      if (e.key === 'ArrowRight') goNext();
-      if (e.key === 'ArrowLeft') goPrev();
-    };
-    document.addEventListener('keydown', handleKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', handleKey);
-      document.body.style.overflow = '';
-    };
-  }, [lightboxIndex, goNext, goPrev]);
 
   // Track which category section is in view to highlight the jump-nav
   useEffect(() => {
@@ -112,7 +70,7 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
   if (categories.length === 0) {
     return (
       <main className="bg-white min-h-screen">
-        <HeroSection totalCategories={0} totalImages={0} />
+        <HeroSection totalCategories={0} />
         <section className="pt-16 pb-24">
           <div className="max-w-[1400px] mx-auto px-6">
             <div className="text-center py-24 border border-dashed border-gray-200 rounded-2xl">
@@ -128,7 +86,7 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
 
   return (
     <main className="bg-white min-h-screen">
-      <HeroSection totalCategories={categories.length} totalImages={allItems.length} />
+      <HeroSection totalCategories={categories.length} />
 
       {/* ── Sticky category nav ── */}
       {categories.length > 1 && (
@@ -215,10 +173,7 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
 
       {/* ── Category Sections ── */}
       {filteredCategories.map((cat, catIdx) => {
-        const catImages = [cat.coverImage, ...cat.images].filter(Boolean);
-        const globalStartIdx = allItems.findIndex(
-          (item) => item.url === catImages[0] && item.category === cat.name
-        );
+        const catImages = localImages[cat.slug] ?? [];
         const num = String(catIdx + 1).padStart(2, '0');
 
         return (
@@ -254,43 +209,34 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
               </p>
 
               {/* Image grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5">
-                {catImages.map((image, imgIdx) => {
-                  const globalIdx = globalStartIdx + imgIdx;
-                  return (
-                    <motion.button
+              {catImages.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5">
+                  {catImages.map((url, imgIdx) => (
+                    <motion.div
                       key={`${cat.slug}-${imgIdx}`}
-                      onClick={() => setLightboxIndex(globalIdx)}
-                      className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-transparent transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5B22] focus-visible:ring-offset-2"
+                      className="group relative bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-transparent cursor-pointer"
                       initial={{ opacity: 0, y: 16 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: '-40px' }}
                       transition={{ duration: 0.35, delay: Math.min(imgIdx, 6) * 0.05 }}
                       whileHover={{ y: -3 }}
+                      onClick={() => setSelectedImage(url)}
                     >
-                      {/* corner brackets — toolpath reference mark, shown on hover */}
-                      <span className="pointer-events-none absolute top-2 left-2 w-3.5 h-3.5 border-t-2 border-l-2 border-[#FF5B22] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                      <span className="pointer-events-none absolute bottom-2 right-2 w-3.5 h-3.5 border-b-2 border-r-2 border-[#FF5B22] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-
                       <div className="aspect-square bg-white p-4 md:p-5">
                         <img
-                          src={image}
+                          src={url}
                           alt={`${cat.name} — image ${imgIdx + 1}`}
-                          loading={globalIdx < 4 ? 'eager' : 'lazy'}
                           className="w-full h-full object-contain group-hover:scale-[1.06] transition-transform duration-500"
                         />
                       </div>
-
-                      {/* zoom affordance */}
-                      <span className="absolute bottom-2 left-2 w-7 h-7 rounded-full bg-[#1C1D1F]/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6M8 11h6" />
-                        </svg>
-                      </span>
-                    </motion.button>
-                  );
-                })}
-              </div>
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-400 text-sm text-center py-12">
+                  No product images available for this category.
+                </p>
+              )}
             </div>
           </section>
         );
@@ -336,74 +282,33 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
 
       {/* ── Lightbox ── */}
       <AnimatePresence>
-        {lightboxIndex !== null && currentItem && (
+        {selectedImage && (
           <motion.div
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10"
+            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 md:p-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            onClick={() => setLightboxIndex(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={`${currentItem.category} image ${lightboxIndex + 1} of ${allItems.length}`}
+            transition={{ duration: 0.3 }}
+            onClick={() => setSelectedImage(null)}
           >
-            <button
-              onClick={() => setLightboxIndex(null)}
-              className="absolute top-4 right-4 md:top-8 md:right-8 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all duration-200 cursor-pointer"
-              aria-label="Close lightbox"
+            <motion.button
+              className="absolute top-6 right-6 text-white/70 hover:text-white text-3xl z-10 cursor-pointer"
+              onClick={() => setSelectedImage(null)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {allItems.length > 1 && (
-              <button
-                onClick={(e) => { e.stopPropagation(); goPrev(); }}
-                className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all duration-200 cursor-pointer"
-                aria-label="Previous image"
-              >
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-            )}
-
-            <motion.div
-              className="max-w-5xl w-full flex flex-col items-center justify-center"
-              key={lightboxIndex}
-              initial={{ scale: 0.92, opacity: 0 }}
+              &#10005;
+            </motion.button>
+            <motion.img
+              src={selectedImage}
+              alt="Product image"
+              className="max-w-full max-h-full object-contain drop-shadow-2xl"
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.92, opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={currentItem.url}
-                alt={`${currentItem.category} — image ${lightboxIndex + 1}`}
-                className="w-full max-h-[70vh] md:max-h-[80vh] object-contain drop-shadow-2xl"
-              />
-              <div className="flex items-center gap-3 mt-4">
-                <span className="text-white/80 text-sm font-semibold">{currentItem.category}</span>
-                <span className="text-white/30">•</span>
-                <span className="text-white/50 text-sm font-mono">
-                  {lightboxIndex + 1} / {allItems.length}
-                </span>
-              </div>
-            </motion.div>
-
-            {allItems.length > 1 && (
-              <button
-                onClick={(e) => { e.stopPropagation(); goNext(); }}
-                className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all duration-200 cursor-pointer"
-                aria-label="Next image"
-              >
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            )}
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -414,10 +319,8 @@ export default function ProductsClient({ categories }: ProductsClientProps) {
 
 function HeroSection({
   totalCategories,
-  totalImages,
 }: {
   totalCategories: number;
-  totalImages: number;
 }) {
   return (
       <section className="relative min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh] pt-[130px] md:pt-[150px] lg:pt-[170px] pb-16 md:pb-24 flex items-center overflow-hidden">
@@ -463,8 +366,6 @@ function HeroSection({
         {totalCategories > 0 && (
           <div className="flex gap-8 md:gap-12 mt-10 md:mt-14">
             <Stat value={totalCategories} label={totalCategories === 1 ? 'Category' : 'Categories'} />
-            <div className="w-px bg-white/10" />
-            <Stat value={totalImages} label={totalImages === 1 ? 'Component' : 'Components'} />
           </div>
         )}
       </div>
