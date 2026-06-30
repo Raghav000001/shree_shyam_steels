@@ -80,11 +80,11 @@ export default function Header() {
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex items-center justify-between h-20 md:h-24 lg:h-[90px]">
-          <Link href="/" className="flex items-center gap-2 md:gap-6 lg:gap-7 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2 md:gap-6 lg:gap-7 shrink-0">
             <img
               src="/images/logo1.png"
               alt="Shree Shyam Precision"
-              className="block h-14 sm:h-16 lg:h-[85px] w-auto object-contain translate-y-1 lg:translate-y-2 scale-105"
+              className="block h-14 sm:h-16 lg:h-[85px] w-auto object-contain translate-y-1 lg:translate-y-2 scale-125 origin-left drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] brightness-110 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] transition-all duration-300"
             />
           </Link>
 

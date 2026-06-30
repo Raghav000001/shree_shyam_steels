@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PageBanner from '@/components/ui/PageBanner';
 import AboutSection from '@/components/sections/About';
-import ExhibitionsSection from '@/components/sections/Testimonials';
+import VisionMission from '@/components/sections/VisionMission';
 
 export default function AboutUsClient() {
   return (
@@ -138,7 +138,7 @@ export default function AboutUsClient() {
         </div>
       </section>
 
-      {/* <ExhibitionsSection /> */}
+      <VisionMission />
     </main>
   );
 }
